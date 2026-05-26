@@ -30,14 +30,9 @@ html { scroll-behavior: smooth; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background 0.3s ease, padding 0.3s ease;
-}
-.navbar.scrolled {
-  padding: 14px 5%;
   background: rgba(20, 28, 43, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
 }
 
 .logo { font-size: 24px; font-weight: 700; letter-spacing: 2px; }
@@ -91,33 +86,6 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 8px 20px rgba(255,179,77,0.45);
 }
 
-/* ── 滚动提示 ── */
-.scroll-hint {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: rgba(255,255,255,0.55);
-  font-size: 12px;
-  letter-spacing: 1px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  animation: fadeUp 1s ease 1s both;
-}
-.scroll-arrow { animation: bounce 1.8s ease-in-out infinite; font-size: 16px; }
-
-@keyframes bounce {
-  0%,100% { transform: translateY(0); opacity: 0.55; }
-  50%      { transform: translateY(7px); opacity: 1; }
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
-  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
-}
-
 /* ── Sections ── */
 section { padding: 72px 0; }
 
@@ -136,13 +104,6 @@ section { padding: 72px 0; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
-}
-.grid-4 {
-  width: min(1180px, 92%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
 }
 .grid-3-wide {
   width: min(1180px, 92%);
@@ -210,53 +171,6 @@ section { padding: 72px 0; }
   background: linear-gradient(180deg, #f8f5ef 0%, #fffaf2 100%);
 }
 
-.food-block {
-  padding: 64px 0;
-}
-.food-block.alt-bg { background: #fff; }
-
-.food-block-header {
-  width: min(1180px, 92%);
-  margin: 0 auto 32px;
-  text-align: center;
-}
-.food-block-header h3 {
-  font-size: 26px;
-  color: #1f2a44;
-  margin: 10px 0 8px;
-}
-.food-block-header p { color: #666; font-size: 15px; }
-
-.food-tag {
-  display: inline-block;
-  background: #fff3e0;
-  color: #c07000;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 999px;
-  letter-spacing: 0.5px;
-}
-.food-block.alt-bg .food-tag {
-  background: #e8f5e9;
-  color: #2e7d32;
-}
-
-.food-card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 20px 18px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.food-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.1);
-}
-.food-emoji { font-size: 30px; margin-bottom: 10px; }
-.food-card h4 { font-size: 15px; color: #1f2a44; margin-bottom: 6px; }
-.food-card p  { font-size: 13px; color: #666; line-height: 1.6; }
-
 .exp-card {
   background: #fffaf4;
   border: 1px solid #f2e5d4;
@@ -294,30 +208,11 @@ section { padding: 72px 0; }
   font-size: 14px;
 }
 
-/* ── 滚动淡入 ── */
-.fade-in {
-  opacity: 0;
-  transform: translateY(22px) scale(0.96);
-  transform-origin: center;
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
 /* ── Responsive ── */
-@media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .navbar { flex-direction: column; gap: 12px; padding: 16px 5%; }
-  .grid-3, .grid-3-wide { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
   .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px 16px; }
-  .grid-3, .grid-3-wide, .grid-4 { grid-template-columns: 1fr; }
+  .grid-3, .grid-3-wide { grid-template-columns: 1fr; }
   .section-title h2 { font-size: 24px; }
-  .scroll-hint { display: none; }
   .banner { padding: 30px 0 60px; }
 }

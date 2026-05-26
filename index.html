@@ -9,7 +9,7 @@
 <body>
 
   <header class="hero">
-    <nav class="navbar" id="navbar">
+    <nav class="navbar">
       <div class="logo">遇见成都</div>
       <ul class="nav-links">
         <li><a href="#home" class="nav-link">首页</a></li>
@@ -26,10 +26,6 @@
         <a class="banner-btn" href="#spots">查看热门景点</a>
       </div>
     </section>
-    <div class="scroll-hint">
-      <span>向下滚动</span>
-      <div class="scroll-arrow">↓</div>
-    </div>
   </header>
 
   <main>
@@ -39,19 +35,19 @@
         <p>比打卡景点更有成都味道的，是那些藏在日常生活里的慢节奏与烟火气。</p>
       </div>
       <div class="grid-3-wide">
-        <article class="exp-card highlight fade-in">
+        <article class="exp-card highlight">
           <div class="exp-icon">🎭</div>
           <h4>川剧变脸</h4>
           <p>找一家老戏园坐下，点一壶盖碗茶，在锣鼓声里看变脸、吐火和身段表演，热闹里透着老成都的江湖味。</p>
           <span class="exp-tip">建议：提前到场选靠前座位</span>
         </article>
-        <article class="exp-card highlight fade-in">
+        <article class="exp-card highlight">
           <div class="exp-icon">🍵</div>
           <h4>鹤鸣盖碗茶</h4>
           <p>清晨去人民公园坐进竹椅，来一碗盖碗茶，再体验掏耳朵的安逸节奏，最能感受到成都人把日子过慢的本事。</p>
           <span class="exp-tip">建议：尝试采耳</span>
         </article>
-        <article class="exp-card highlight fade-in">
+        <article class="exp-card highlight">
           <div class="exp-icon">🍲</div>
           <h4>深夜火锅</h4>
           <p>夜幕降临后钻进街头巷尾的火锅店，红油翻滚、杯盏碰响、烟火升腾，那种热辣鲜香就是成都深夜最鲜活的城市表情。</p>
@@ -66,9 +62,8 @@
         <p>精选成都值得一去的经典景点，适合初次到访和深度游玩。</p>
       </div>
       <div class="grid-3">
-        <article class="spot-card fade-in">
+        <article class="spot-card">
           <div class="card-image image-panda">
-            <div class="card-image-overlay"></div>
           </div>
           <div class="card-body">
             <h3>大熊猫繁育研究基地</h3>
@@ -76,9 +71,8 @@
             <span class="rating">★★★★★</span>
           </div>
         </article>
-        <article class="spot-card fade-in">
+        <article class="spot-card">
           <div class="card-image image-kuanzhai">
-            <div class="card-image-overlay"></div>
           </div>
           <div class="card-body">
             <h3>宽窄巷子</h3>
@@ -86,9 +80,8 @@
             <span class="rating">★★★★☆</span>
           </div>
         </article>
-        <article class="spot-card fade-in">
+        <article class="spot-card">
           <div class="card-image image-jinli">
-            <div class="card-image-overlay"></div>
           </div>
           <div class="card-body">
             <h3>锦里古街</h3>
@@ -96,9 +89,8 @@
             <span class="rating">★★★★☆</span>
           </div>
         </article>
-        <article class="spot-card fade-in">
+        <article class="spot-card">
           <div class="card-image image-wuhou">
-            <div class="card-image-overlay"></div>
           </div>
           <div class="card-body">
             <h3>武侯祠</h3>
@@ -106,9 +98,8 @@
             <span class="rating">★★★★☆</span>
           </div>
         </article>
-        <article class="spot-card fade-in">
+        <article class="spot-card">
           <div class="card-image image-chunxi">
-            <div class="card-image-overlay"></div>
           </div>
           <div class="card-body">
             <h3>春熙路</h3>
@@ -116,9 +107,8 @@
             <span class="rating">★★★★☆</span>
           </div>
         </article>
-        <article class="spot-card fade-in">
+        <article class="spot-card">
           <div class="card-image image-tianfu">
-            <div class="card-image-overlay"></div>
           </div>
           <div class="card-body">
             <h3>天府广场</h3>
@@ -135,17 +125,17 @@
         <p>提前规划路线，可以让你的成都之行更轻松。</p>
       </div>
       <div class="grid-3">
-        <div class="card fade-in">
+        <div class="card">
           <div class="card-icon-sm">🌸</div>
           <h3>最佳季节</h3>
           <p>春秋季气候舒适，适合城市漫游和周边短途出行。</p>
         </div>
-        <div class="card fade-in">
+        <div class="card">
           <div class="card-icon-sm">🚇</div>
           <h3>交通方式</h3>
           <p>地铁覆盖广，热门景点之间通行方便，也可搭配打车提高效率。</p>
         </div>
-        <div class="card fade-in">
+        <div class="card">
           <div class="card-icon-sm">🥢</div>
           <h3>必吃推荐</h3>
           <p>火锅、兔头、钟水饺、甜水面和盖碗茶，都是不可错过的成都味道。</p>
@@ -159,81 +149,7 @@
   </footer>
 
   <script>
-    const navbar = document.querySelector('.navbar');
-    const sections = [...document.querySelectorAll('section[id]')];
-    const navLinks = [...document.querySelectorAll('.nav-link')];
-
-    const getNavbarOffset = () => navbar.getBoundingClientRect().height + 12;
-
-    const setActiveLink = (id) => {
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-      });
-    };
-
-    const updateActiveNav = () => {
-      const marker = window.scrollY + getNavbarOffset() + window.innerHeight * 0.2;
-      let currentSectionId = sections[0]?.id;
-
-      sections.forEach(section => {
-        const top = section.offsetTop;
-        const bottom = top + section.offsetHeight;
-        if (marker >= top && marker < bottom) {
-          currentSectionId = section.id;
-        }
-      });
-
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
-        currentSectionId = sections.at(-1)?.id || currentSectionId;
-      }
-
-      if (currentSectionId) setActiveLink(currentSectionId);
-    };
-
-    let ticking = false;
-    const handleScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        navbar.classList.toggle('scrolled', window.scrollY > 40);
-        updateActiveNav();
-        ticking = false;
-      });
-    };
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', (event) => {
-        const targetId = link.getAttribute('href');
-        const target = document.querySelector(targetId);
-        if (!target) return;
-
-        event.preventDefault();
-        const targetTop = target.getBoundingClientRect().top + window.scrollY - getNavbarOffset();
-        window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
-        history.replaceState(null, '', targetId);
-        setActiveLink(target.id);
-      });
-    });
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', updateActiveNav);
-    updateActiveNav();
-
-    const fadeObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.transitionDelay = `${entry.target.dataset.delay || 0}ms`;
-          entry.target.classList.add('visible');
-          fadeObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.fade-in').forEach((el, i) => {
-      el.dataset.delay = (i % 3) * 100;
-      fadeObserver.observe(el);
-    });
-
+    // 打字机效果：标题逐字显示
     const h1 = document.querySelector('.typewriter');
     if (h1) {
       const text = h1.textContent;
